@@ -1,0 +1,16 @@
+README.rst
+setup.py
+geographiclib/__init__.py
+geographiclib/accumulator.py
+geographiclib/constants.py
+geographiclib/geodesic.py
+geographiclib/geodesiccapability.py
+geographiclib/geodesicline.py
+geographiclib/geomath.py
+geographiclib/polygonarea.py
+geographiclib.egg-info/PKG-INFO
+geographiclib.egg-info/SOURCES.txt
+geographiclib.egg-info/dependency_links.txt
+geographiclib.egg-info/top_level.txt
+geographiclib/test/__init__.py
+geographiclib/test/test_geodesic.py

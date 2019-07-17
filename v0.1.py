@@ -1,3 +1,5 @@
+#This is the command line version. For more info, refer this blog post -
+
 import sys
 import requests
 
