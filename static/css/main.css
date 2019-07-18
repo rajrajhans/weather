@@ -1,0 +1,46 @@
+body{
+
+}
+#main{
+    margin: 50px;
+    color: #000;
+    height: 75vh;
+}
+
+hr {
+height: 30px;
+border-style: solid;
+border-color: black;
+border-width: 0.5px 0 0 0;
+border-radius: 20px;
+}
+hr:before {
+display: block;
+content: "";
+height: 30px;
+margin-top: -31px;
+border-style: solid;
+border-color: black;
+border-width: 0 0 0.5px 0;
+border-radius: 20px;
+}
+
+.text_top{
+    margin-left: 15px;
+}
+
+.btn-rajrajhans{
+    z-index: 55;
+    background-color: #021B79;
+    color:white;
+}
+.btn-rajrajhans:hover{
+    color:#DBDBDB !important;
+}
+.btn-custom{
+    margin-top:5px;
+    background-color: #021B79;
+}
+#city{
+    margin-top: 5px;
+}
