@@ -48,17 +48,18 @@
 
             <div class="col-md-12">
 <!--******************* FORM START ******************* -->
-                <form method="post" action=".">
-                    <label for="city">Enter the city name: </label>
-                    <div class="row">
-                        <div class="col-md-10 col-xs-12"><div>
-                            <input type="text" class="form-control" id="city" name="city" placeholder="Enter the name of the city" required>
-                        </div></div>
+                <form method="post" action="{{ url_for('weather') }}">
 
-                    <div class="col-md-2 col-xs-12"><div>
-                        <input type="submit" class="btn btn-primary btn-custom" value="Submit">
-                    </div></div></div>
-                </form>
+                            <label for="city">Enter the city name: </label>
+                        <div class="row">
+                            <div class="col-md-10 col-xs-12"><div>
+                                <input type="text" class="form-control" id="city" name="city" placeholder="Enter the name of the city" required>
+                            </div></div>
+
+                        <div class="col-md-2 col-xs-12"><div>
+                            <input type="submit" class="btn btn-primary btn-custom" value="Submit">
+                        </div></div></div>
+                    </form>
 <!--******************* FORM END ******************* -->
 
             </div>
@@ -67,12 +68,13 @@
 
 <!--******************* WEATHER START ******************* -->
 <div class="container">
-    Here the report will go
-    {{ weather.current_date }}
-    {{ weather.summary }}
-    {{ weather.max_temp }}
-    {{ weather.min_temp }}
-    {{ weather.raining_prob }}
+    <p>Current Date - {{ weather.date }}</p>
+    <p>Summary - {{ weather.summary }}</p>
+    <p>Temp Max - {{ weather.max_temp }}</p>
+    <p>Temp Min - {{ weather.min_temp }}</p>
+    <p>Rain Probability - {{ weather.raining_prob }}</p>
+    <p>Weather Errors -{{ weather.errors }}</p>
+    <p>Geo Errors - {{ errors_geo }}</p>
 
 </div>
 <!--******************* WEATHER END ******************* -->

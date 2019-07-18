@@ -12,12 +12,16 @@ def index():
 @app.route('/weather', methods=["GET", "POST"])
 def weather():
     weatherObj = None
+    errors_geo = None
     if request.method == "POST":
         city = request.form["city"]
         wr = Controller()
-        location = wr.getGeocode(city)
-        weatherObj = wr.getWeatherData(location)
-    return render_template("weather.html", weather=weatherObj)
+        try:
+            location = wr.getGeocode(city)
+            weatherObj = wr.getWeatherData(location)
+        except:
+            errors_geo = "Something went wrong. Please check your city name and try again later. "
+    return render_template("weather.html", weather=weatherObj, errors_geo=errors_geo)
 
 
 if __name__ == '__main__':
