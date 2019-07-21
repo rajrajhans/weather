@@ -32,6 +32,7 @@ class Controller:
         current_date = ""
         max_temp = ""
         min_temp = ""
+        avg_temp = ""
         summary = ""
         raining_prob = ""
         icon = ""
@@ -50,12 +51,13 @@ class Controller:
             current_date = str(time.strftime('%d-%m-%Y', time.localtime(current_date_epoch)))
             max_temp = response["daily"]["data"][0]["apparentTemperatureMax"]
             min_temp = response["daily"]["data"][0]["apparentTemperatureMin"]
+            avg_temp = int((max_temp + min_temp)/2)
             summary = response["daily"]["data"][0]["summary"]
             raining_prob = "Chance of rain: %.2f%%" % (response["daily"]["data"][0]["precipProbability"] * 100)
             icon = response["daily"]["data"][0]["icon"]
 
         except:
             errors = "Something went wrong. Please check your city name and try again later. "
-        report = WeatherData(current_date, max_temp, min_temp, summary, raining_prob, icon, errors, city)
+        report = WeatherData(current_date, max_temp, min_temp, avg_temp, summary, raining_prob, icon, errors, city)
 
         return report

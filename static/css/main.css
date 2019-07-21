@@ -4,7 +4,7 @@ body{
 #main{
     margin: 50px;
     color: #000;
-    height: 120vh;
+    height: 80vh;
 }
 
 hr {
@@ -49,5 +49,8 @@ border-radius: 20px;
     .brand-box{
         position:relative;
         left: 13px;
+    }
+    .main{
+        height: 60vh;
     }
 }

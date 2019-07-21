@@ -6,7 +6,8 @@
     <script src="../static/css/jquery.min.js"></script> <!--jQuery -->
     <link href="../static/css/bootstrap.min.css" rel="stylesheet"> <!--Bootstrap -->
     <script src="../static/css/bootstrap.min.js"></script>
-    <link href="../static/css/weather-icons.min.css" rel="stylesheet"><!--Weather Icons -->
+
+    <link id="weather-css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/header.css">
     <link rel="stylesheet" href="../static/css/footer.css">
     <link rel="stylesheet" href="../static/css/main.css">
@@ -24,21 +25,69 @@
         <div class="card card-5">
             <!--******************* WEATHER START ******************* -->
             <div class="container-fluid">
-                <br>
-                <p>Current city - {{ weather.city }}    </p>
-                <p>Current Date - {{ weather.date }}    </p>
-                <p>Summary - {{ weather.summary }}      </p>
-                <p>Temp Max - {{ weather.max_temp }}    </p>
-                <p>Temp Min - {{ weather.min_temp }}    </p>
-                <p>Rain Probability - {{ weather.raining_prob }}</p>
-                <p>Icon - {{ weather.icon }}            </p>
-                {% if weather.errors != None and errors_geo != None %}
+
+                {% if weather.errors == None and errors_geo == None %}
+                <div class="row">
+                    <div class="col-md-6 col-xs-12">
+                    <div class="temp_avg">
+                        {{ weather.avg_temp }}
+                        <span class="temp_units">
+                            °C
+                        </span>
+                        <span class="temp_minmax">
+                            {{ weather.min_temp }}°C &nbsp; | &nbsp;  {{ weather.max_temp }}°C
+                        </span>
+                    </div>
+                    </div>
+
+                    <div class="col-md-6 col-xs-12">
+                    <div class="citydate">
+                        <div class="city">
+                            {{ weather.city }}
+                        </div>
+                        <div class="date">
+                            {{ weather.date }}
+                        </div>
+                    </div></div>
+                </div>
+
+                <div class="row">
+                <div class="col-md-8 col-xs-9">
+                <div class="summary ">
+                    {{ weather.summary }}
+                </div></div>
+
+                    <div class="col-md-4 col-xs-3">
+                    <div class="wicon">
+                            <h1>
+                                {% if weather.icon == "clear-day" %} <i class="wi wi-day-sunny"></i>
+                                {% elif weather.icon == "clear-night" %} <i class="wi wi-night-clear"></i>
+                                {% elif weather.icon == "rain" %} <i class="wi wi-rain"></i>
+                                {% elif weather.icon == "snow" %} <i class="wi wi-snow"></i>
+                                {% elif weather.icon == "sleet" %} <i class="wi wi-sleet"></i>
+                                {% elif weather.icon == "wind" %} <i class="wi wi-windy"></i>
+                                {% elif weather.icon == "fog" %} <i class="wi wi-fog"></i>
+                                {% elif weather.icon == "cloudy" %} <i class="wi wi-cloudy"></i>
+                                {% elif weather.icon == "partly-cloudy-day" %} <i class="wi wi-day-cloudy"></i>
+                                {% elif weather.icon == "partly-cloudy-night" %} <i class="wi wi-night-partly-cloudy"></i>
+                                {% endif %}
+                            </h1>
+                    </div></div></div>
+
+                    <div class="summary ">
+                        {{ weather.raining_prob }}
+                    </div>
+
+            {% else %}
                     <p>Weather Errors - {{ weather.errors }}</p>
                     <p>Geo Errors - {{ errors_geo }}        </p>
                 {% endif %}
             </div>
-            <!--******************* WEATHER END ******************* -->
 
+            <!--******************* WEATHER END ******************* -->
+            <div class="row">
+                <a href="/#main" class="btn btn-animated btn-weather">Back</a>
+            </div>
         </div>
     </div>
 </body>
@@ -51,7 +100,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <h5>Quick links</h5>
                         <ul class="list-unstyled quick-links">
-                            <li><a href="http://rajrajhans.com/"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                            <li><a href="/"><i class="fa fa-angle-double-right"></i>Home</a></li>
                             <li><a href="http://rajrajhans.com/"><i class="fa fa-angle-double-right"></i>Simple Weather App Blog Post</a></li>
                         </ul>
                     </div>
