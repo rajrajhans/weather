@@ -4,7 +4,7 @@ body{
 #main{
     margin: 50px;
     color: #000;
-    height: 80vh;
+    height: 120vh;
 }
 
 hr {
@@ -43,4 +43,11 @@ border-radius: 20px;
 }
 #city{
     margin-top: 5px;
+}
+
+@media only screen and (max-width: 600px){
+    .brand-box{
+        position:relative;
+        left: 13px;
+    }
 }

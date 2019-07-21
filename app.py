@@ -18,7 +18,7 @@ def weather():
         wr = Controller()
         try:
             location = wr.getGeocode(city)
-            weatherObj = wr.getWeatherData(location)
+            weatherObj = wr.getWeatherData(location, city)
         except:
             errors_geo = "Something went wrong. Please check your city name and try again later. "
     return render_template("weather.html", weather=weatherObj, errors_geo=errors_geo)

@@ -1,0 +1,60 @@
+body {
+  	font-family: 'Lato', sans-serif;
+  	font-weight: 400;
+  	font-size: 16px;
+  	line-height: 1.7;
+  	color: #000;
+    background-image:
+	  				linear-gradient( to right bottom,
+									 rgba(13, 23, 26, 0.6),
+     								 rgba(17, 33, 39, 0.6)),
+					url('../img/bg.jpg');
+
+	background-size: cover;
+  	background-position: center;
+	background-attachment: fixed;
+}
+
+.card-container{
+    height: 100vh;
+
+}
+
+.card {
+    margin: 10% 25% 25% 25%;
+  background: #fff;
+  border-radius: 2px;
+  display: inline-block;
+    height: 50%;
+    width: 50%;
+  position: relative;
+}
+
+
+.card-5 {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+.brand-box-weather {
+	z-index: 55;
+  	position: sticky;
+  	top: 40px;
+  	left: 40px;
+	right: 40px;
+	margin-left: 40px;
+}
+
+@media only screen and (max-width: 600px){
+    .card {
+        margin: 20% 10% 25% 10%;
+        width: 80%;
+        height: 65%;
+    }
+
+
+    .brand-box-weather {
+        margin: 5% 50% 2px 50%;
+	position: absolute;
+	top: 5px;
+	}
+}

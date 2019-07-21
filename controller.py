@@ -18,11 +18,11 @@ class Controller:
         except:  # To handle Nominatim timeout errors.
             if recursion > 2:
                 raise KeyError
-            print("making a request to nominatim")
+            print("making a request to nominatim again")
             time.sleep(1)
             return Controller.getGeocode(self, name)
 
-    def getWeatherData(self, location):
+    def getWeatherData(self, location, city):
         """This function does 4 things:\n
             1. Hit the API with a customized request and then store it in response.json
             2. Parse the response.json and extract necessary values from it (temperature - max, min, summary, raining probability, icon)
@@ -35,7 +35,7 @@ class Controller:
         summary = ""
         raining_prob = ""
         icon = ""
-        errors = "no error"
+        errors = None
         try:
             lat = str(location.latitude)
             long = str(location.longitude)
@@ -56,6 +56,6 @@ class Controller:
 
         except:
             errors = "Something went wrong. Please check your city name and try again later. "
-        report = WeatherData(current_date, max_temp, min_temp, summary, raining_prob, icon, errors)
+        report = WeatherData(current_date, max_temp, min_temp, summary, raining_prob, icon, errors, city)
 
         return report
