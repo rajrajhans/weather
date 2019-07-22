@@ -32,7 +32,11 @@ body {
 
 
 .card-5 {
-  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+	background: #FFEEEE;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #DDEFBB, #FFEEEE);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #DDEFBB, #FFEEEE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .brand-box-weather {
@@ -110,7 +114,9 @@ body {
 .btn-weather{
 	margin: 0 auto;
 	margin-top: 10px;
+	border: 1px solid black;
 }
+
 @media only screen and (max-width: 800px){
     .citydate{
 		display: block;

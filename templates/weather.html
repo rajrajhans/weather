@@ -79,8 +79,10 @@
                     </div>
 
             {% else %}
-                    <p>Weather Errors - {{ weather.errors }}</p>
-                    <p>Geo Errors - {{ errors_geo }}        </p>
+                    <br><br>
+                    <div class="alert alert-danger" role="alert">
+                        {{ weather.errors }}
+                    </div>
                 {% endif %}
             </div>
 
