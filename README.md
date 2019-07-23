@@ -1,6 +1,6 @@
 # Simple Weather App
 
-This project started as a command line application, which then evolved into a simple Flask WebApp.
+This project started as a command line application, which then evolved into a simple Flask WebApp. The app has been deployed at https://weather.rajrajhans.com/
 
 ## Blog Post 
 
