@@ -34,7 +34,7 @@ class Controller:
         max_temp = ""
         min_temp = ""
         avg_temp = ""
-        summary = ""
+        summary = None
         raining_prob = ""
         icon = ""
         errors = None
