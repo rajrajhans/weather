@@ -9,9 +9,11 @@ To know more about this project, please read the blog post accompanying it - [ W
 ## Screenshots
 
 ![](static/img/screen1.png)
+
 <em>Image: Homepage of the WebApp</em>
 
 ![](static/img/screen2.png)
+
 <em>Image: Weather card for Pune City</em>
 
 ## Running the project
