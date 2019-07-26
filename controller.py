@@ -2,8 +2,9 @@ from model import WeatherData
 import requests
 from geopy.geocoders import Nominatim
 import time
+import os
 
-DARKSKY_SECRET_KEY = 'c57bbf6ce78f701a13dcde772e16058e'  # Your DarkSky API key here
+DARKSKY_SECRET_KEY = os.environ["DARKSKY_API_KEY"]  # Your DarkSky API key here
 
 option_list = "exclude=currently,minutely,hourly,alerts&units=si"  # Asking the API to not send above data fields as we only need the "daily" datapoints
 
